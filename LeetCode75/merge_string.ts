@@ -16,24 +16,35 @@ Example 1:
   merged: a p b q c r
 */
 
-
-
 export default function mergeAlternately(word1: string, word2: string): string { 
-  
-  let merged = ""; 
+  const max_length = Math.max(word1.length, word2.length); 
+  let merged = "";
 
-  for (let i = 0; i < Math.max(word1.length, word2.length); ++i) { 
-    if (i < word1.length) { 
-       merged += word1[i]
-    }
+  for (let i = 0; i < max_length; ++i) { 
+    if (word1[i]) merged += word1[i]; 
+    if (word2[i]) merged += word2[i];
+  }; 
 
-    if ( i < word2.length) { 
-        merged += word2[i]
-    }
-  }
 
-  return merged; 
+ return merged; 
 };
+
+// export default function mergeAlternately(word1: string, word2: string): string { 
+  
+//   let merged = ""; 
+
+//   for (let i = 0; i < Math.max(word1.length, word2.length); ++i) { 
+//     if (i < word1.length) { 
+//        merged += word1[i]
+//     }
+
+//     if ( i < word2.length) { 
+//         merged += word2[i]
+//     }
+//   }
+
+//   return merged; 
+// };
 
 
 /* O(N) 56ms
